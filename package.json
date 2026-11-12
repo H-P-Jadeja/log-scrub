@@ -1,0 +1,42 @@
+{
+  "name": "log-scrub",
+  "version": "1.0.0",
+  "description": "Zero-dependency utility that deep-redacts passwords, tokens, JWTs, card numbers and other secrets from objects and strings before you log them.",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "example": "node examples/basic.js"
+  },
+  "keywords": [
+    "redact",
+    "mask",
+    "scrub",
+    "sanitize",
+    "logging",
+    "secrets",
+    "pii",
+    "security",
+    "express",
+    "middleware"
+  ],
+  "author": "Harshyamsinh Jadeja <hpj.contact@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/H-P-Jadeja/log-scrub.git"
+  },
+  "bugs": {
+    "url": "https://github.com/H-P-Jadeja/log-scrub/issues"
+  },
+  "homepage": "https://github.com/H-P-Jadeja/log-scrub#readme",
+  "engines": {
+    "node": ">=18"
+  }
+}
