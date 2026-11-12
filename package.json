@@ -1,5 +1,5 @@
 {
-  "name": "log-scrub",
+  "name": "@bladegg/log-scrub",
   "version": "1.0.0",
   "description": "Zero-dependency utility that deep-redacts passwords, tokens, JWTs, card numbers and other secrets from objects and strings before you log them.",
   "main": "src/index.js",
