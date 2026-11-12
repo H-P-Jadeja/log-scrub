@@ -1,8 +1,8 @@
-# log-scrub
+# @bladegg/log-scrub
 
-[![npm version](https://img.shields.io/npm/v/log-scrub.svg)](https://www.npmjs.com/package/log-scrub)
+[![npm version](https://img.shields.io/npm/v/@bladegg/log-scrub.svg)](https://www.npmjs.com/package/@bladegg/log-scrub)
 [![CI](https://github.com/H-P-Jadeja/log-scrub/actions/workflows/ci.yml/badge.svg)](https://github.com/H-P-Jadeja/log-scrub/actions)
-[![license](https://img.shields.io/npm/l/log-scrub.svg)](LICENSE)
+[![license](https://img.shields.io/npm/l/@bladegg/log-scrub.svg)](LICENSE)
 
 > Deep-redact passwords, tokens, JWTs, card numbers and other secrets from objects and strings **before** they reach your logs.
 
@@ -10,25 +10,25 @@ Zero dependencies · Never mutates your data · Handles circular references · T
 
 ## What it does
 
-`log-scrub` takes any JavaScript value (object, array, Error, string, Map, Set…) and returns a **safe copy** in which sensitive information is replaced with a mask such as `[REDACTED]`. It finds secrets in two ways:
+`@bladegg/log-scrub` takes any JavaScript value (object, array, Error, string, Map, Set…) and returns a **safe copy** in which sensitive information is replaced with a mask such as `[REDACTED]`. It finds secrets in two ways:
 
 1. **By key name**: `password`, `accessToken`, `x-api-key`, `Authorization`, `cookie`, …
 2. **By value pattern**: JWTs, `Bearer` tokens, AWS access keys, GitHub tokens, credentials inside URLs, and Luhn-valid credit-card numbers, even when hidden inside a larger string.
 
 ## Why it is useful
 
-Logging whole request bodies, headers or error objects is a common debugging habit, and a common way to leak secrets into log files, monitoring tools and third-party services. Hand-writing `delete body.password` everywhere is easy to forget. `log-scrub` gives you one small function to call at the logging boundary.
+Logging whole request bodies, headers or error objects is a common debugging habit, and a common way to leak secrets into log files, monitoring tools and third-party services. Hand-writing `delete body.password` everywhere is easy to forget. `@bladegg/log-scrub` gives you one small function to call at the logging boundary.
 
 ## Installation
 
 ```bash
-npm install log-scrub
+npm install @bladegg/log-scrub
 ```
 
 ## Basic usage
 
 ```js
-const { scrub } = require('log-scrub');
+const { scrub } = require('@bladegg/log-scrub');
 
 const user = {
   id: 7,
@@ -47,7 +47,7 @@ console.log(scrub(user));
 Scrub secrets hiding inside text:
 
 ```js
-const { scrubString } = require('log-scrub');
+const { scrubString } = require('@bladegg/log-scrub');
 
 scrubString('Authorization: Bearer abc123def456ghi');
 // 'Authorization: Bearer [REDACTED]'
@@ -60,7 +60,7 @@ Express middleware:
 
 ```js
 const express = require('express');
-const { expressMiddleware } = require('log-scrub');
+const { expressMiddleware } = require('@baldegg/log-scrub');
 
 const app = express();
 app.use(express.json());
@@ -111,7 +111,7 @@ Express/Connect middleware. Adds `req.scrubbed()` → a redacted snapshot of `{ 
 ### More examples
 
 ```js
-const { createScrubber } = require('log-scrub');
+const { createScrubber } = require('@bladegg/log-scrub');
 
 const scrubber = createScrubber({
   keys: ['nickname', /^internal/i],

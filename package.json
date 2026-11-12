@@ -38,5 +38,8 @@
   "homepage": "https://github.com/H-P-Jadeja/log-scrub#readme",
   "engines": {
     "node": ">=18"
-  }
+  },
+  "publishConfig": {
+  "access": "public"
+},
 }

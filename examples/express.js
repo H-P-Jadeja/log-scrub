@@ -1,8 +1,8 @@
 'use strict';
 
-// npm install express log-scrub
+// npm install express @bladegg/log-scrub
 const express = require('express');
-const { expressMiddleware } = require('../src'); // or require('log-scrub')
+const { expressMiddleware } = require('../src'); // or require('@bladegg/log-scrub')
 
 const app = express();
 app.use(express.json());

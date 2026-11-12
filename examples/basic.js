@@ -1,7 +1,7 @@
 'use strict';
 
 const { scrub, scrubString, createScrubber, expressMiddleware } = require('../src');
-// After publishing: const { scrub, ... } = require('log-scrub');
+// After publishing: const { scrub, ... } = require('@bladegg/log-scrub');
 
 // 1. Scrub an object before logging
 const user = {

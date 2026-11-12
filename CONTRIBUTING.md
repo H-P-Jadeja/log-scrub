@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping improve log-scrub!
+Thanks for helping improve @baldegg/log-scrub!
 
 - Fork and clone the repo, then `npm test` (no install needed; there are no dependencies).
 - Add tests for every behaviour change in `test/`.
